@@ -12,8 +12,13 @@ export default function Home() {
             {/* HEADER   */}
             <Header />
 
-            {/* BANNER  */}
-            <Banner />
+            <main>
+                {/* BANNER  */}
+                <Banner />
+    
+                {/* PRODUCT FEED  */}
+            </main>
+            
         </>
     );
 }
