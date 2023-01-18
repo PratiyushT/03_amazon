@@ -13,21 +13,21 @@ export default function Header() {
             {/* TOP NAVIGATION */}
             <div className="flex items-center bg-amazon_blue px-6 sm:px-4 py-3 sm:py-2 space-x-8 ">
                 {/* LOGO  */}
-                <div className="sm:h-12 flex-grow sm:flex-grow-0 cursor-pointer">
+                <div className="sm:h-12 flex-grow forNavigationSearch:flex-grow-0 cursor-pointer">
                     <Image
                         src={"https://links.papareact.com/f90"}
                         width={105}
                         height={40}
-                        className="hidden  pt-3  sm:block"
+                        className="hidden pt-3  forNavigationLogo:block"
                     />
                     <FaAmazon
                         src={"https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg"}
-                        className="sm:hidden block text-white flex-grow scale-[2]"
+                        className="forNavigationLogo:hidden block text-white flex-grow scale-[2]"
                     />
                 </div>
 
                 {/* SEARCH BAR */}
-                <div className="h-10 flex-grow hidden sm:flex">
+                <div className="h-10 flex-grow hidden forNavigationSearch:flex">
                     <input
                         type="text"
                         className="flex-grow h-full rounded-l-md flex-shrink focus:outline-none px-4 "

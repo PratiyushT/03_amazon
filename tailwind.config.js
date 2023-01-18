@@ -7,8 +7,10 @@ module.exports = {
     darkMode: false,
     theme: {
         screens: {
-            sm: "740px",
-            md: "800px",
+            forNavigationLogo:"450px",
+            sm: "640px",
+            forNavigationSearch:"740px",
+            md: "790px",
             lg: "1024px",
             xl: "1280px",
             "2xl": "1536px",
