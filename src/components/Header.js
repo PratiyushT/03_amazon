@@ -63,7 +63,9 @@ export default function Header() {
 
             {/* BOTTOM NAVIGATION  */}
             <div>
-                <div></div>
+                <div>
+                    
+                </div>
             </div>
         </header>
     );

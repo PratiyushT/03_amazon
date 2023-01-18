@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Banner from "../components/Banner";
 import Head from "next/head";
 
 export default function Home() {
@@ -8,9 +9,11 @@ export default function Home() {
                 <title>Amazon 2.0</title>
             </Head>
 
-            {/* Header  */}
-
+            {/* HEADER   */}
             <Header />
+
+            {/* BANNER  */}
+            <Banner />
         </>
     );
 }
