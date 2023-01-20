@@ -12,9 +12,9 @@ const banners = [
 export default function Banner() {
 
     return (
-        <div className="relative">
+        <div className="relative lg:px-5">
 
-            <div className="absolute bottom-0 z-20 w-full h-32 bg-gradient-to-t from-gray-100 to-transparent "></div>
+            <div className="absolute bottom-0 z-20 w-full h-32 bg-gradient-to-t from-gray-300 to-transparent "></div>
 
             <Carousel
                 interval={2000}
@@ -26,7 +26,7 @@ export default function Banner() {
                 autoPlay={true}
             >
                 {banners.map(banner => (
-                    <img key={banner.id} src={banner.img} loading="lazy" />
+                    <img key={banner.id} alt="amazon banner" src={banner.img} loading="lazy" />
                 ))}
             </Carousel>
         </div>

@@ -1,8 +1,6 @@
-import Image from "next/image";
 import React from "react";
 
 import { AiFillStar } from "react-icons/ai";
-import Currency from "react-currency-formatter";
 
 export default function Product({
     image,
@@ -12,31 +10,29 @@ export default function Product({
     category,
     rating,
 }) {
-
-    const hasPrime = Math.random() < 0.5;
     return (
-        <div className=" border border-black lg:px-5 div">
+        <div className="bg-white m-10 sm:m-5 relative flex flex-col justify-center p-8 text-sm">
             {/* CATEGORY TEXT  */}
-            <p>{category}</p>
-
-            {/* TITLE TEXT  */}
-            <h4>{title}</h4>
+            <p className="absolute top-2 right-2 italic text-xs">{category}</p>
 
             {/* IMAGE  */}
             <img
                 src={image}
-                className=" object-contain h-[200px] w-[200px]"
+                className="self-center object-contain h-[200px] w-[180px] mt-2"
                 alt=""
             />
 
+            {/* TITLE TEXT  */}
+            <h4 className="font-bold mt-2">{title}</h4>
+
             {/* RATING  */}
-            <div className="flex items-center">
+            <div className="flex items-center mt-2">
                 {Array(Math.round(rating.rate))
                     .fill()
                     .map(() => (
-                        <AiFillStar className="h-5" />
+                        <AiFillStar className="h-5 text-yellow-500" />
                     ))}
-                <div className="">
+                <div className="pl-3 text-xs font-semibold text-gray-500">
                     {rating.rate + " "}
                     <span>out of</span>
                     {" " + rating.count}
@@ -44,23 +40,13 @@ export default function Product({
             </div>
 
             {/* DESCRIPTION  */}
-            <p>{desc}</p>
+            <p className="line-clamp-2 mt-2">{desc}</p>
 
             {/* CURRENCY  */}
-            <div>
-                <Currency quantity={price} />
-            </div>
-
-            {/* PRIME STATUS  */}
-            {hasPrime && (
-                <div>
-                    <img src="https:/links.papareact.com/fdw" alt="" />
-                    <p>Free Next-day delivery</p>
-                </div>
-            )}
+            <div className="mt-2 mb-2 font-bold">{`$${price}`}</div>
 
             {/* ADD TO CART BUTTON  */}
-            <button>Add to cart</button>
+            <button className="btn mt-auto">Add to cart</button>
         </div>
     );
 }
