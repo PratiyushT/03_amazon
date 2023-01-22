@@ -7,7 +7,8 @@ import {
 
 import { FaAmazon } from "react-icons/fa";
 
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 export default function Header() {
     const { data: session } = useSession();
@@ -17,20 +18,25 @@ export default function Header() {
             {/* TOP NAVIGATION */}
             <div className="flex items-center bg-amazon_blue px-6 sm:px-4 py-3 forNavigationLogo:py-2 space-x-8 ">
                 {/* LOGO  */}
+
                 <div className="sm:h-12 flex-grow forNavigationSearch:flex-grow-0 cursor-pointer">
-                    <Image
-                        alt=""
-                        src={"https://links.papareact.com/f90"}
-                        width={105}
-                        height={40}
-                        className="hidden pt-3 forNavigationLogo:block"
-                    />
-                    <FaAmazon
-                        src={
-                            "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg"
-                        }
-                        className="forNavigationLogo:hidden block text-white flex-grow scale-[2]"
-                    />
+                    <Link href="/">
+                        <Image
+                            alt=""
+                            src={"https://links.papareact.com/f90"}
+                            width={105}
+                            height={40}
+                            className="hidden pt-3 forNavigationLogo:block"
+                        />
+                    </Link>
+                    <Link href="/">
+                        <FaAmazon
+                            src={
+                                "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg"
+                            }
+                            className="forNavigationLogo:hidden block text-white flex-grow scale-[2]"
+                        />
+                    </Link>
                 </div>
 
                 {/* SEARCH BAR */}
@@ -48,14 +54,18 @@ export default function Header() {
                 space-x-5 md:space-x-8 sm:leading-3 pl-10 sm:pl-auto"
                 >
                     {/* ACCOUNT DETAILS  */}
-                    <div onClick={!session ? signIn : signOut} className="link">
-                        <p>{` ${
-                            session ? "Hello, " + session.user.email : "Sign In"
-                        }`}</p>
-                        <p className="sm:text-sm font-bold">
-                            Accounts and Lists
-                        </p>
-                    </div>
+                    <Link href={"account"}>
+                        <div className="link">
+                            <p>{` ${
+                                session
+                                    ? "Hello, " + session.user.name
+                                    : "Sign In"
+                            }`}</p>
+                            <p className="sm:text-sm font-bold">
+                                Accounts and Lists
+                            </p>
+                        </div>
+                    </Link>
 
                     {/* ORDERS  */}
                     <div className="link">
@@ -64,15 +74,19 @@ export default function Header() {
                     </div>
 
                     {/* CART  */}
-                    <div className="relative link flex items-end">
-                        <ShoppingCartIcon className=" h-6 sm:h-8 flex" />
-                        <span className="hidden md:block pb-1 font-bold link">
-                            Cart
-                        </span>
-                        <div className="cart-icon">
-                            <span className="font-bold text text-sm">5</span>
+                    <Link href="/checkout">
+                        <div className="relative link flex items-end">
+                            <ShoppingCartIcon className=" h-6 sm:h-8 flex" />
+                            <span className="hidden md:block pb-1 font-bold link">
+                                Cart
+                            </span>
+                            <div className="cart-icon">
+                                <span className="font-bold text text-sm">
+                                    5
+                                </span>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
 
