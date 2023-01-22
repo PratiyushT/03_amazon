@@ -7,7 +7,11 @@ import {
 
 import { FaAmazon } from "react-icons/fa";
 
+import { signIn, signOut, useSession } from "next-auth/react";
+
 export default function Header() {
+    const { data: session } = useSession();
+
     return (
         <header>
             {/* TOP NAVIGATION */}
@@ -41,11 +45,13 @@ export default function Header() {
                 {/* RIGHT HAND SIDE  */}
                 <div
                     className="text-white text-xs flex items-center 
-                space-x-5 md:space-x-8 sm:leading-3"
+                space-x-5 md:space-x-8 sm:leading-3 pl-10 sm:pl-auto"
                 >
                     {/* ACCOUNT DETAILS  */}
-                    <div className="link">
-                        <p>Hello, Pratiyush</p>
+                    <div onClick={!session ? signIn : signOut} className="link">
+                        <p>{` ${
+                            session ? "Hello, " + session.user.email : "Sign In"
+                        }`}</p>
                         <p className="sm:text-sm font-bold">
                             Accounts and Lists
                         </p>

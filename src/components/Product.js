@@ -11,7 +11,7 @@ export default function Product({
     rating,
 }) {
     return (
-        <div className="bg-white m-10 sm:m-5 relative flex flex-col justify-center p-8 text-sm">
+        <div className="bg-white m-10 sm:m-5 relative flex flex-col justify-center sm:p-8 text-sm">
             {/* CATEGORY TEXT  */}
             <p className="absolute top-2 right-2 italic text-xs">{category}</p>
 
@@ -30,7 +30,7 @@ export default function Product({
                 {Array(Math.round(rating.rate))
                     .fill()
                     .map(() => (
-                        <AiFillStar className="h-5 text-yellow-500" />
+                        <AiFillStar key={Math.random()} className="h-5 text-yellow-500" />
                     ))}
                 <div className="pl-3 text-xs font-semibold text-gray-500">
                     {rating.rate + " "}

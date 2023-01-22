@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import Head from "next/head";
 
+import { SessionProvider } from "next-auth/react";
+
 export default function App({ Component, pageProps }) {
     return (
         <>
@@ -11,7 +13,10 @@ export default function App({ Component, pageProps }) {
                     type="image/x-icon"
                 />
             </Head>
-            <Component {...pageProps} />
+
+            <SessionProvider session={pageProps.session}>
+                <Component {...pageProps} />
+            </SessionProvider>
         </>
     );
 }
