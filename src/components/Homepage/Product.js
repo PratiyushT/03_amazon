@@ -11,7 +11,7 @@ export default function Product({
     rating,
 }) {
     return (
-        <div className="bg-white m-10 sm:m-5 relative flex flex-col justify-center sm:p-8 text-sm">
+        <div className="bg-white m-10 sm:m-5 relative flex flex-col justify-center p-8 text-sm">
             {/* CATEGORY TEXT  */}
             <p className="absolute top-2 right-2 italic text-xs">{category}</p>
 

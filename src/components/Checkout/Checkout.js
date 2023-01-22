@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Checkout() {
   return (
-    <div>Checkout</div>
+    <main className='bg-gray-100'>
+      
+    </main>
   )
 }

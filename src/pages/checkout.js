@@ -1,5 +1,5 @@
-import Checkout from '@/components/Checkout'
-import Header from '@/components/Header'
+import Checkout from '@/components/Checkout/Checkout'
+import Header from '@/components/Header/Header'
 import React from 'react'
 
 export default function CheckoutPage() {
