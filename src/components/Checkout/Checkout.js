@@ -5,7 +5,7 @@ import React from "react";
 import { selectItems, clearBasket } from "@/store/basketSlice";
 import CheckoutItem from "./CheckoutItem";
 
-import { AiFillDelete } from "react-icons/ai";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Checkout() {
@@ -19,7 +19,7 @@ export default function Checkout() {
                 onClick={() => dispatch(clearBasket())}
                 className="mr-3 bg-orange-500 hover:bg-orange-600 text-white py-1 px-2 rounded-lg"
             >
-                <AiFillDelete />
+                <RiDeleteBin2Fill />
             </button>
         </div>
     );
@@ -52,7 +52,7 @@ export default function Checkout() {
                     {items.map((item, index) => {
                         return (
                             <CheckoutItem
-                                key={item.index}
+                                key={index}
                                 id={item.id}
                                 image={item.image}
                                 desc={item.desc}

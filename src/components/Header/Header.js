@@ -27,7 +27,7 @@ export default function Header() {
                 <div className="sm:h-12 flex-grow forNavigationSearch:flex-grow-0 cursor-pointer">
                     <Link href="/">
                         <Image
-                            alt=""
+                            alt="Amazon logo"
                             src={"https://links.papareact.com/f90"}
                             width={105}
                             height={40}

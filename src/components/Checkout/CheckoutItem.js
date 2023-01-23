@@ -1,7 +1,9 @@
 import React from "react";
 
-import { AiFillDelete } from "react-icons/ai";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 import { AiFillStar } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { removeFromBasket } from "@/store/basketSlice";
 
 export default function CheckoutItem({
     id,
@@ -12,6 +14,12 @@ export default function CheckoutItem({
     category,
     rating,
 }) {
+    const dispatch = useDispatch();
+    
+    function removeItemHandler() {
+        dispatch(removeFromBasket(id));
+    }
+
     return (
         <div className="grid grid-cols-5 mx-3 pb-1 border-b relative">
             <img
@@ -23,7 +31,9 @@ export default function CheckoutItem({
             {/* MIDDLE  */}
             <div className="col-span-4 mx-7 pt-7">
                 {/* TITLE  */}
-                <h1 className="font-semibold line-clamp-1 md:text-lg">{title}</h1>
+                <h1 className="font-semibold line-clamp-1 md:text-lg">
+                    {title}
+                </h1>
 
                 {/* RATING STARS  */}
                 <div className="flex mt-0.5">
@@ -49,7 +59,7 @@ export default function CheckoutItem({
 
                 {/* REMOVE FROM CART ICON (TOP RIGHT) */}
                 <div className="absolute top-3 right-3 hover:scale-[1.2] cursor-pointer transition-transform duration-300">
-                    <AiFillDelete />
+                    <RiDeleteBin2Fill onClick={removeItemHandler} />
                 </div>
             </div>
         </div>
