@@ -23,7 +23,7 @@ export default function CheckoutItem({
             {/* MIDDLE  */}
             <div className="col-span-4 mx-7 pt-7">
                 {/* TITLE  */}
-                <h1 className="font-semibold line-clamp-1">{title}</h1>
+                <h1 className="font-semibold line-clamp-1 md:text-lg">{title}</h1>
 
                 {/* RATING STARS  */}
                 <div className="flex mt-0.5">
@@ -38,18 +38,19 @@ export default function CheckoutItem({
                 </div>
 
                 {/* DESCRIPTION  */}
-                <p className="line-clamp-2 text-xs text-gray-600 mt-1.5">
+                <p className="line-clamp-2 text-xs text-gray-600 mt-1.5 sm:text-sm">
                     {desc}
                 </p>
 
                 {/* PRICE  */}
                 <p>
-                    <div className="mt-2 mb-2 font-bold text-xs">{`$${price}`}</div>
+                    <div className="mt-2 mb-2 font-bold text-xs sm:text-sm">{`$${price}`}</div>
                 </p>
 
-              <div className="absolute top-3 right-3 hover:scale-[1.2] cursor-pointer transition-transform duration-300">
-                <AiFillDelete/>
-              </div>
+                {/* REMOVE FROM CART ICON (TOP RIGHT) */}
+                <div className="absolute top-3 right-3 hover:scale-[1.2] cursor-pointer transition-transform duration-300">
+                    <AiFillDelete />
+                </div>
             </div>
         </div>
     );
