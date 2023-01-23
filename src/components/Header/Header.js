@@ -9,9 +9,14 @@ import { FaAmazon } from "react-icons/fa";
 
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { selectItems } from "@/store/basketSlice";
 
 export default function Header() {
     const { data: session } = useSession();
+    const items = useSelector(selectItems);
+
+    
 
     return (
         <header>
@@ -77,14 +82,15 @@ export default function Header() {
                     <Link href="/checkout">
                         <div className="relative link flex items-end">
                             <ShoppingCartIcon className=" h-6 sm:h-8 flex" />
-                            <span className="hidden md:block pb-1 font-bold link">
+                            <span className="hidden md:block font-bold link">
                                 Cart
                             </span>
+                          {  items.length > 0 &&
                             <div className="cart-icon">
-                                <span className="font-bold text text-sm">
-                                    5
+                                <span className="font-bold text text-xs">
+                                    {items.length}
                                 </span>
-                            </div>
+                            </div>}
                         </div>
                     </Link>
                 </div>

@@ -8,7 +8,7 @@
     }
 
     .cart-icon {
-        @apply absolute flex items-center justify-center bg-orange-500 top-[-4px] right-[-8px] w-4 sm:h-5 sm:w-5 rounded-full p-0.5 sm:top-[-6px] sm:right-[-8px] md:top-[-6px] md:right-3
+        @apply absolute flex items-center justify-center  hover:bg-orange-600 bg-orange-500 top-[-4px] right-[-8px] w-4 sm:h-5 sm:w-5 rounded-full p-0.5 sm:top-[-6px] sm:right-[-8px] md:top-[-6px] md:right-3
     }
 
     .search-icon {
